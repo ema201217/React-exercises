@@ -2,17 +2,8 @@ import React from 'react'
 import { Content } from './components/Content'
 import { Header } from './components/Header'
 import { Total } from './components/Total'
-// import { IObjCourse } from './interfaces/ICourse'
+import { IObjCourse } from './interfaces/ICourse'
 
-type IParts = {
-  name: string,
-  exercises: number
-}
-
-interface IObjCourse {
-  name: string
-  parts: IParts[]
-}
 
 export const App = (): React.ReactElement => {
   const course: IObjCourse = {

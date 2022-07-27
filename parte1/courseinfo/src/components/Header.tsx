@@ -1,14 +1,5 @@
 import React from 'react'
-// import { IObjCourse } from '../interfaces/ICourse'
-type IParts = {
-  name: string,
-  exercises: number
-}
-
-interface IObjCourse {
-  name: string
-  parts: IParts[]
-}
+import { IObjCourse } from '../interfaces/ICourse'
 
 export const Header = ({name}: IObjCourse): React.ReactElement => {
   return (
