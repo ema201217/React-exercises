@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ExercisesContext } from "../Context/ExercisesContext";
+import { Part } from "./Part";
 
 export const Content = ():React.ReactElement => {
   const exercises = useContext(ExercisesContext)
@@ -10,15 +11,9 @@ export const Content = ():React.ReactElement => {
 
   return (
     <div className="col-12 col-md-10">
-      <p className="fs-3">
-        {part1} <span className="fs-1 fw-bold text-primary">{exercises.ex1}</span>
-      </p>
-      <p className="fs-3">
-        {part2} <span className="fs-1 fw-bold text-primary">{exercises.ex2}</span>
-      </p>
-      <p className="fs-3">
-        {part3} <span className="fs-1 fw-bold text-primary">{exercises.ex3}</span>
-      </p>
+      <Part part={part1} exValue={exercises.ex1}/>
+      <Part part={part2} exValue={exercises.ex2}/>
+      <Part part={part3} exValue={exercises.ex3}/>
     </div>
   );
 };
