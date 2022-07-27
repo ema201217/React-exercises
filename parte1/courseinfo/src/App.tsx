@@ -2,30 +2,42 @@ import React from 'react'
 import { Content } from './components/Content'
 import { Header } from './components/Header'
 import { Total } from './components/Total'
-import { ExercisesContext } from './Context/ExercisesContext'
+// import { IObjCourse } from './interfaces/ICourse'
 
-interface IObjExercises {
-  ex1: number
-  ex2: number
-  ex3: number
+type IParts = {
+  name: string,
+  exercises: number
+}
+
+interface IObjCourse {
+  name: string
+  parts: IParts[]
 }
 
 export const App = (): React.ReactElement => {
-  const course: string = 'Half Stack application development'
-  const exercises: IObjExercises = {
-    ex1: 10,
-    ex2: 7,
-    ex3: 14
+  const course: IObjCourse = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      }, {
+        name: 'Using props to pass data',
+        exercises: 7
+      }
+      , {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
   }
 
   return (
     <div className="container text-center">
       <div className="row justify-content-center">
-    <ExercisesContext.Provider value={exercises}>
-      <Header course={course}/>
-      <Content />
-      <Total />
-    </ExercisesContext.Provider>
+          <Header {...course} />
+          <Content {...course}/>
+          <Total {...course}/>
       </div>
     </div>
   )
