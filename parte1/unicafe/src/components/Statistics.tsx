@@ -1,4 +1,4 @@
-import { ItemStatistics } from './ItemStatistics'
+import { ItemStatistics } from "./ItemStatistics";
 
 export const Statistics = () => {
   return (
@@ -6,5 +6,5 @@ export const Statistics = () => {
       <h2 className="text-info text-decoration-underline mb-4">Statistics</h2>
       <ItemStatistics />
     </div>
-  )
-}
+  );
+};

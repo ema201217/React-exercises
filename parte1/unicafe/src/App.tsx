@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { Feedback } from './components/Feedback'
-import { Statistics } from './components/Statistics'
-import { feedbackContext } from './Context/feedbackContext'
+import { useState } from "react";
+import { Feedback } from "./components/Feedback";
+import { Statistics } from "./components/Statistics";
+import { feedbackContext } from "./Context/feedbackContext";
 
 export const App = () => {
-  const [good, setGood] = useState<number>(0)
-  const [neutral, setNeutral] = useState<number>(0)
-  const [bad, setBad] = useState<number>(0)
+  const [good, setGood] = useState<number>(0);
+  const [neutral, setNeutral] = useState<number>(0);
+  const [bad, setBad] = useState<number>(0);
 
   const objFeedbacks = {
     good,
@@ -14,8 +14,8 @@ export const App = () => {
     bad,
     setGood,
     setNeutral,
-    setBad
-  }
+    setBad,
+  };
 
   return (
     <feedbackContext.Provider value={objFeedbacks}>
@@ -26,5 +26,5 @@ export const App = () => {
         </div>
       </div>
     </feedbackContext.Provider>
-  )
-}
+  );
+};
